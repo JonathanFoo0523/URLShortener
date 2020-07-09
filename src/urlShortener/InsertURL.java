@@ -75,7 +75,9 @@ public class InsertURL extends HttpServlet {
 				
 				rs.next();	
 				
-				response.getWriter().println(url + " Successfully inserted!");
+				Integer id = Integer.parseInt(rs.getString("LAST_INSERT_ID()"));
+				
+				response.getWriter().println(url + " Successfully inserted! " + "The unique identifier is " + "curlec_" + utils.Base62.convertToBase62(id));
 				
 				con.close();
 				pstmt.close();
