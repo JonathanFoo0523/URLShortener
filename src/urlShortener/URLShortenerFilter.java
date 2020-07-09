@@ -37,8 +37,7 @@ public class URLShortenerFilter implements Filter{
 		String[] resSplit = res.split("[/_]", 0);
 		
 		if (!resSplit[2].equals("curlec")) {
-			RequestDispatcher rd = request.getRequestDispatcher(resSplit[2]);
-			rd.forward(request, response);
+			chain.doFilter(request, response);
 			return;
 		}
 		
