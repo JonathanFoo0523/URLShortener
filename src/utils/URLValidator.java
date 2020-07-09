@@ -22,10 +22,10 @@ public class URLValidator {
     }
     
     public static String buildURL(String url) {
-    	if (url.startsWith("www")) {
-    		return "https://" + url;
+    	if (url.startsWith("http")) {
+    		return url;
     	} else {
-    		return "https://www." + url;
+    		return "http://www." + url;
     	}
     }
 }
